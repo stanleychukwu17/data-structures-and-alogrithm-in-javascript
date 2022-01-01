@@ -91,7 +91,7 @@ class LinkedList {
             beforeNode = beforeNode.next
         }
 
-        //
+        // selects the node to delete and deletes it
         toDeleteNode = beforeNode.next
         const holdingPointer = toDeleteNode.next
         beforeNode.next = holdingPointer

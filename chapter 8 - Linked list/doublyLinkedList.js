@@ -12,7 +12,7 @@ const createNode = (value) => ({value, next:null})
 // console.log(new Node(15), createNode(15)) - they are both prototypes of Object in javascript.. In JS, a class is still an Object
 
 // Since javascript doesn't come with an in-built LinkedList, we have to build our own
-class LinkedList {
+class DoublyLinkedList {
 
     // we create the head and the tail of the linked list and as-well save the length of items in our linked list
     constructor(value) {
@@ -91,7 +91,7 @@ class LinkedList {
 
 }
 
-const myList = new LinkedList(10);
+const myList = new DoublyLinkedList(10);
 myList.append(16)
 myList.prepend(1)
 myList.insert(2, 99)

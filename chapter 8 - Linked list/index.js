@@ -82,21 +82,11 @@ class LinkedList {
 
     // removes an item from the linked list
     remove(index) {
-        let toDeleteNode
-        let beforeNode = this.head
-        let stopSearch = (index - 2)
-
-        // we loop until we get the node before the node we want to delete
-        for (let i = 0; i < stopSearch; i++) {
-            beforeNode = beforeNode.next
-        }
-
-        // selects the node to delete and deletes it
-        toDeleteNode = beforeNode.next
-        const holdingPointer = toDeleteNode.next
-        beforeNode.next = holdingPointer
-        this.length--;
-       return this;
+        const leader = this.traverseToIndex(index - 1)
+        const unWantedNode = leader.next
+        leader.next = unWantedNode.next
+        this.length--
+        return this
     }
 }
 

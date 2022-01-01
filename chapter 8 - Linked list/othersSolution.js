@@ -80,6 +80,15 @@ class LinkedList {
         return this
     }
 
+    // removes an item from the linked list
+    remove(index) {
+        const leader = this.traverseToIndex(index - 1)
+        const unWantedNode = leader.next
+        leader.next = unWantedNode.next
+        this.length--
+        return this
+    }
+
 }
 
 const myList = new LinkedList(10);

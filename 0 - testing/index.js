@@ -27,6 +27,7 @@ class LinkedList {
     }
 
     get_the_node_before (index) {
+        let Node;
 
     }
 

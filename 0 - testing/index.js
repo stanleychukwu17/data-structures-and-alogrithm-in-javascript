@@ -29,6 +29,10 @@ class LinkedList {
     get_the_node_before (index) {
         let Node;
         let i = 0;
+        for (let i = 0; i < index.length; i++) {
+            const uy = index[i];
+            
+        }
     }
 
     insert (value) {

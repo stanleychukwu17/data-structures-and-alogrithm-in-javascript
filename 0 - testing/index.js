@@ -41,6 +41,38 @@ class LinkedList {
         return this;
     }
 
+    remove (index) {
+        const nodeBefore = this.get_the_node_before(index - 1)
+        const toDeleteNode = nodeBefore.next
+        nodeBefore.next = toDeleteNode.next
+        this.length--
+        return this
+    }
+
+    reverse () {
+        const list = this.printList().reverse()
+        const headNode = new Node(list[0])
+        let tailNode = headNode
+        let currentNode = headNode
+        let itemNode;
+
+        console.log('before ', this.printList())
+        console.log('after reverse', this.printList())
+        console.log( currentNode, tailNode)
+        for (let i = 0; i < list.length; i++) {
+            itemNode = new Node(list[i])
+            currentNode.next = itemNode
+            currentNode = itemNode;
+            tailNode = itemNode;
+        }
+
+        console.log('final', headNode)
+    }
+
+    reverse_within_range (index, range) {
+
+    }
+
     printList() {
         const items = []
         let currentNode = this.head
@@ -49,7 +81,7 @@ class LinkedList {
             items.push(currentNode.value)
             currentNode = currentNode.next
         }
-        console.log(items)
+        // console.log(items, this.length)
         return items
     }
 }
@@ -58,8 +90,8 @@ const myList = new LinkedList(10);
 myList.append(16)
 myList.append(17)
 myList.append(18)
-myList.append(19)
 myList.prepend(1)
 myList.insert(4, 22)
-// console.log(myList);
 myList.printList()
+myList.reverse()
+// console.log(myList.tail)

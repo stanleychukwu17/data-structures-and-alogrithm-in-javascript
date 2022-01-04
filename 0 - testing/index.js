@@ -28,7 +28,7 @@ class LinkedList {
 
     get_the_node_before (index) {
         let Node;
-        let i = 0
+        let i = 0;
     }
 
     insert (value) {

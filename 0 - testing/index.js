@@ -56,17 +56,15 @@ class LinkedList {
         let currentNode = headNode
         let itemNode;
 
-        console.log('before ', this.printList())
-        console.log('after reverse', this.printList())
-        console.log( currentNode, tailNode)
-        for (let i = 0; i < list.length; i++) {
+        for (let i = 1; i < list.length; i++) {
             itemNode = new Node(list[i])
             currentNode.next = itemNode
             currentNode = itemNode;
             tailNode = itemNode;
         }
 
-        console.log('final', headNode)
+        this.head = headNode;
+        this.tail = tailNode;
     }
 
     reverse_within_range (index, range) {
@@ -81,7 +79,7 @@ class LinkedList {
             items.push(currentNode.value)
             currentNode = currentNode.next
         }
-        // console.log(items, this.length)
+        console.log(items, this.length)
         return items
     }
 }
@@ -94,4 +92,5 @@ myList.prepend(1)
 myList.insert(4, 22)
 myList.printList()
 myList.reverse()
+myList.printList()
 // console.log(myList.tail)

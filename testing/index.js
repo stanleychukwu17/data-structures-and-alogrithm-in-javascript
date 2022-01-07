@@ -7,48 +7,70 @@ class Node {
 }
 
 
-class Stack {
+class Queues {
     constructor() {
-        this.array = [];
+        this.first = null
+        this.last = null
+        this.length = 0;
     }
 
     peek () {
-        return this.array[0]
+        return this.first
     }
 
-    push (value) {
-        return this.array.unshift(value);
+    enqueue (value) {
+        const newNode = new Node(value)
+        if (this.length == 0) {
+            this.first = newNode
+            this.last = newNode
+        } else {
+            this.last.next = newNode // since the last is the last item, we make the new node to be the new last
+            this.last = newNode
+        }
+
+        this.length++;
     }
 
-    pop () {
-        return this.array.shift();
+    dequeue() {
+        if (!this.first) { return null }
+
+        if (this.first === this.last) {
+            this.last = null
+        }
+
+        this.first = this.first.next
+        this.length--
+        return this
     }
 
     isEmpty () {
-        return this.array.length === 0
+        return this.length === 0
     }
 
     // gets all the items in the linked list and puts them into an array and prints the array out
     printList() {
-        console.log(this.array, this.array.length)
-        return this.array
+        const items = []
+        let currentNode = this.first
+
+        while (currentNode !== null) {
+            items.push(currentNode.value)
+            currentNode = currentNode.next
+        }
+        console.log(items, this.length)
+        return items
     }
 }
 
 // testing the linked list
-const myStack = new Stack();
-myStack.push('Google')
-myStack.push('Udemy')
-myStack.push('Discord')
-myStack.push('Twitter')
-myStack.push('facebook')
-myStack.printList()
-console.log(myStack.pop())
-console.log(myStack.pop())
-console.log(myStack.peek())
-myStack.printList()
+const myQueue = new Queues();
+myQueue.enqueue('Joy')
+myQueue.enqueue('Matt')
+myQueue.enqueue('Pavel')
+myQueue.enqueue('Samir')
+myQueue.printList()
 
-// Twitter
-// Discord
-// Udemy
-// Google
+
+// Joy
+// Matt
+// Pavel
+// Samir

@@ -44,6 +44,7 @@ class LinkedList {
         const newNode = new Node(value)
         const nodeBefore = this.get_the_node_before(index)
         newNode.next = nodeBefore.next
+        // newNode.prev = nodeBefore
         nodeBefore.next = newNode
         this.length++
         return this;

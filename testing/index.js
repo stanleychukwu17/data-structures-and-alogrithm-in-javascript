@@ -1,76 +1,59 @@
-// the class below creates a new node
-class Node {
-    constructor (value) {
-        this.value = value;
-        this.next = null;
-    }
-}
+/*
 
+Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
-class Queues {
-    constructor() {
-        this.first = null
-        this.last = null
-        this.length = 0;
-    }
+Implement the MyQueue class:
 
-    peek () {
-        return this.first
-    }
+void push(int x) Pushes element x to the back of the queue.
+int pop() Removes the element from the front of the queue and returns it.
+int peek() Returns the element at the front of the queue.
+boolean empty() Returns true if the queue is empty, false otherwise.
+Notes:
 
-    enqueue (value) {
-        const newNode = new Node(value)
-        if (this.length == 0) {
-            this.first = newNode
-            this.last = newNode
-        } else {
-            this.last.next = newNode // since the last is the last item, we make the new node to be the new last
-            this.last = newNode
-        }
+You must use only standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.
+Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
+ 
 
-        this.length++;
-    }
+*/
 
-    dequeue() {
-        if (!this.first) { return null }
+var MyQueue = function() {
+    
+};
 
-        if (this.first === this.last) {
-            this.last = null
-        }
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyQueue.prototype.push = function(x) {
+    
+};
 
-        this.first = this.first.next
-        this.length--
-        return this
-    }
+/**
+ * @return {number}
+ */
+MyQueue.prototype.pop = function() {
+    
+};
 
-    isEmpty () {
-        return this.length === 0
-    }
+/**
+ * @return {number}
+ */
+MyQueue.prototype.peek = function() {
+    
+};
 
-    // gets all the items in the linked list and puts them into an array and prints the array out
-    printList() {
-        const items = []
-        let currentNode = this.first
+/**
+ * @return {boolean}
+ */
+MyQueue.prototype.empty = function() {
+    
+};
 
-        while (currentNode !== null) {
-            items.push(currentNode.value)
-            currentNode = currentNode.next
-        }
-        console.log(items, this.length)
-        return items
-    }
-}
-
-// testing the linked list
-const myQueue = new Queues();
-myQueue.enqueue('Joy')
-myQueue.enqueue('Matt')
-myQueue.enqueue('Pavel')
-myQueue.enqueue('Samir')
-myQueue.printList()
-
-
-// Joy
-// Matt
-// Pavel
-// Samir
+/** 
+ * Your MyQueue object will be instantiated and called as such:
+ * var obj = new MyQueue()
+ * obj.push(x)
+ * var param_2 = obj.pop()
+ * var param_3 = obj.peek()
+ * var param_4 = obj.empty()
+ */

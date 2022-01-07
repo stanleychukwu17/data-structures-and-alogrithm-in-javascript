@@ -7,7 +7,6 @@ class Node {
     }
 }
 
-
 class LinkedList {
     // the constructor creates the head and the tail of the linked list, also we store the total number of items in the list(i.e the this.length)
     constructor(value) {
@@ -19,17 +18,21 @@ class LinkedList {
     // attaches a new node to the end of the linked list
     append (value) {
         const newNode = new Node(value)
-        this.tail.next = newNode // since the tail is the last item, we make the new node to be the new tail
+        newNode.prev = this.tail
+        this.tail.next = newNode
         this.tail = newNode
-        this.length++;
+        this.length++
+        return this
     }
 
     // attaches a new node to the begining of the linked list
     prepend (value) {
         const newNode = new Node(value)
         newNode.next = this.head
+        this.head.prev = newNode
         this.head = newNode
-        this.length++;
+        this.length++
+        return this
     }
 
     //gets the node(i.e an item) before a certian index
@@ -43,9 +46,12 @@ class LinkedList {
     insert (index, value) {
         const newNode = new Node(value)
         const nodeBefore = this.get_the_node_before(index)
-        newNode.next = nodeBefore.next
-        // newNode.prev = nodeBefore -  for the linked list
+        const nodeAfter = nodeBefore.next
+        newNode.next = nodeAfter
+        newNode.prev = nodeBefore
         nodeBefore.next = newNode
+        nodeAfter.prev = newNode
+
         this.length++
         return this;
     }
@@ -53,33 +59,13 @@ class LinkedList {
     // deletes a node from the linked list
     remove (index) {
         const nodeBefore = this.get_the_node_before(index - 1) // get the node before the one we want to delete
-        const toDeleteNode = nodeBefore.next // the next one is the one we're deleting
-        nodeBefore.next = toDeleteNode.next // once we skip the current node by jumping it, since there is no other pointer to the object/node, the javascript gabage collector deletes the object and reclaims the space in the memory
+        const nodeAfter = nodeBefore.next.next // gets the node after the one we want to delete
+
+        nodeBefore.next = nodeAfter // we move the next pointer to the node after the node we're deleting
+        nodeAfter.prev = nodeBefore // we move the pointer of the previous from the node after - now we have finally deleted the node because nothing is point to the node anymore
+    
         this.length--
         return this
-    }
-
-    // reverses the linked list
-    reverse () {
-        const list = this.printList().reverse() // reverses the items in the list to make it easier for us
-        const headNode = new Node(list[0]) // creates a new node with the first item in the reversed list
-        let tailNode = headNode
-        let currentNode = headNode
-        let newNode;
-
-        for (let i = 1; i < list.length; i++) {
-            newNode = new Node(list[i])
-            currentNode.next = newNode // the next item is the new node created
-            currentNode = newNode; // we move the pointer to the new node so it is now the current node and the last node
-            tailNode = newNode;
-        }
-
-        this.head = headNode; // updates the linked list head node
-        this.tail = tailNode; // updates the linked list tail node
-    }
-
-    reverse_within_range (index, range) {
-
     }
 
     // gets all the items in the linked list and puts them into an array and prints the array out
@@ -100,10 +86,13 @@ class LinkedList {
 const myList = new LinkedList(10);
 myList.append(16)
 myList.append(17)
-myList.append(18)
 myList.prepend(1)
-myList.insert(4, 22)
+myList.insert(2, 15)
+myList.remove(3)
+console.log(myList)
 myList.printList()
-myList.reverse()
-myList.printList()
+// myList.append(17)
+// myList.append(18)
+// myList.printList()
+// myList.reverse()
 // console.log(myList.tail)

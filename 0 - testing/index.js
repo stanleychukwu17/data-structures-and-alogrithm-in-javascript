@@ -57,9 +57,10 @@ class LinkedList {
         return this
     }
 
+    // reverses the linked list
     reverse () {
-        const list = this.printList().reverse()
-        const headNode = new Node(list[0])
+        const list = this.printList().reverse() // reverses the items in the list to make it easier for us
+        const headNode = new Node(list[0]) // creates a new node with the first item in the reversed list
         let tailNode = headNode
         let currentNode = headNode
         let itemNode;
@@ -79,6 +80,7 @@ class LinkedList {
 
     }
 
+    // gets all the items in the linked list and puts them into an array and prints the array out
     printList() {
         const items = []
         let currentNode = this.head

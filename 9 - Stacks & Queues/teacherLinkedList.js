@@ -7,9 +7,7 @@ class Node {
 }
 
 
-// implementing a stack with a linked list
 class Stack {
-    // the constructor creates the head and the tail of the linked list, also we store the total number of items in the list(i.e the this.length)
     constructor() {
         this.top = null
         this.bottom = null
@@ -17,7 +15,7 @@ class Stack {
     }
 
     peek () {
-        return this.top && this.top.value
+        return this.top
     }
 
     push (value) {
@@ -25,30 +23,26 @@ class Stack {
 
         if (this.length == 0) {
             this.top = newNode
-            this.bottom = this.top
+            this.bottom = newNode
         } else {
-            newNode.next = this.top
+            const holdingPointer = this.top
             this.top = newNode
+            this.top.next = holdingPointer
         }
+
         this.length++;
+        return this
     }
 
     pop () {
-        if (this.length == 0) {
-            return null;
-        } else if (this.length == 1) {
-            const holdingPointer = this.top
-            this.top = null
+        if (!this.top) { return null }
+
+        if (this.top === this.bottom) {
             this.bottom = null
-            this.length--
-            return holdingPointer
-        } else {
-            const toDeleteNode = this.top
-            const newTop = toDeleteNode.next
-            this.top = newTop
-            this.length--
-            return toDeleteNode
         }
+
+        this.top = this.top.next
+        this.length--
 
         return this
     }

@@ -7,9 +7,7 @@ class Node {
 }
 
 
-// implementing a stack with a linked list
 class Stack {
-    // the constructor creates the head and the tail of the linked list, also we store the total number of items in the list(i.e the this.length)
     constructor() {
         this.top = null
         this.bottom = null

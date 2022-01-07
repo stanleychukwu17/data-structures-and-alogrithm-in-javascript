@@ -63,17 +63,17 @@ class LinkedList {
         const headNode = new Node(list[0]) // creates a new node with the first item in the reversed list
         let tailNode = headNode
         let currentNode = headNode
-        let itemNode;
+        let newNode;
 
         for (let i = 1; i < list.length; i++) {
-            itemNode = new Node(list[i])
-            currentNode.next = itemNode
-            currentNode = itemNode;
-            tailNode = itemNode;
+            newNode = new Node(list[i])
+            currentNode.next = newNode // the next item is the new node created
+            currentNode = newNode; // we move the pointer to the new node so it is now the current node and the last node
+            tailNode = newNode;
         }
 
-        this.head = headNode;
-        this.tail = tailNode;
+        this.head = headNode; // updates the linked list head node
+        this.tail = tailNode; // updates the linked list tail node
     }
 
     reverse_within_range (index, range) {
@@ -94,6 +94,7 @@ class LinkedList {
     }
 }
 
+// testing the linked list
 const myList = new LinkedList(10);
 myList.append(16)
 myList.append(17)

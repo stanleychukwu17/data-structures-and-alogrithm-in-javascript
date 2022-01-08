@@ -76,6 +76,7 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
+
 // console.log(tree)
 
 // console.log(traverse(tree.root))

@@ -79,4 +79,5 @@ tree.insert(1)
 // console.log(tree)
 
 // console.log(traverse(tree.root))
+
 tree.lookup(100)

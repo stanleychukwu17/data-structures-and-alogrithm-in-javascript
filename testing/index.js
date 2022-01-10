@@ -55,8 +55,8 @@ class BinarySearchTree {
 
     // gets an item from the bst and also return the level where we found the node
     lookup (value) {
-        const currentNode = this.root
-        const continueTraverse = true
+        let currentNode = this.root
+        let continueTraverse = true
         let step = 1
         let the_end
 

@@ -54,7 +54,12 @@ class BinarySearchTree {
     }
 
     // gets an item from the bst and also return the level where we found the node
-    lookup (value) {}
+    lookup (value) {
+        const root = this.root
+        const continueTraverse
+        console.log(root)
+        console.log('i have seen the value am looking for')
+    }
 
     // removes and item from the bst and then re-organizes the BST
     remove (value) {}

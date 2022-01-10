@@ -26,7 +26,10 @@ class BinarySearchTree {
         }
 
         while (continueTraverse) {
-            if (value > currentNode.value) { // if value received is greater than current node value, then we're moving to the right, else we moving to the left
+            if (value == currentNode.value) {
+                continueTraverse = false
+                where_to_attach_node = 'none'
+            } else if (value > currentNode.value) { // if value received is greater than current node value, then we're moving to the right, else we moving to the left
                 if (currentNode.right === null) {
                     where_to_attach_node = 'right'
                     continueTraverse = false
@@ -48,6 +51,8 @@ class BinarySearchTree {
             currentNode.right = newNode
         } else if (where_to_attach_node === 'left') {
             currentNode.left = newNode
+        } else if (where_to_attach_node === 'none') {
+            console.log('we found a duplicate sir')
         }
 
         return this
@@ -114,4 +119,4 @@ tree.insert(1)
 
 // console.log(traverse(tree.root))
 
-console.log(tree.lookup(100))
+console.log(tree.lookup(170))

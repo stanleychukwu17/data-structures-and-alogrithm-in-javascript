@@ -7,10 +7,12 @@ class Node {
 }
 
 class BinarySearchTree {
+    // the new root has a null three until a new one is added
     constructor () {
         this.root = null
     }
 
+    // inserts a new item to the tree
     insert (value) {
         const newNode = new Node(value)
         let continueTraverse = true
@@ -24,7 +26,7 @@ class BinarySearchTree {
         }
 
         while (continueTraverse) {
-            if (value > currentNode.value) {
+            if (value > currentNode.value) { // if value received is greater than current node value, then we're moving to the right, else we moving to the left
                 if (currentNode.right === null) {
                     where_to_attach_node = 'right'
                     continueTraverse = false
@@ -51,8 +53,10 @@ class BinarySearchTree {
         return this
     }
 
+    // gets an item from the bst and also return the level where we found the node
     lookup (value) {}
 
+    // removes and item from the bst and then re-organizes the BST
     remove (value) {}
 
 }

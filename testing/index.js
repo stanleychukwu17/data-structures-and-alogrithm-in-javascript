@@ -114,4 +114,4 @@ tree.insert(1)
 
 // console.log(traverse(tree.root))
 
-tree.lookup(100)
+console.log(tree.lookup(100))

@@ -83,7 +83,6 @@ class BinarySearchTree {
         }
 
         return the_end
-        console.log('i have seen the value am looking for')
     }
 
     // removes and item from the bst and then re-organizes the BST

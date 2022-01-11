@@ -194,8 +194,7 @@ tree.insert(140)
 tree.insert(165)
 // console.log(tree)
 
-// tree.remove(1)
-tree.remove(190)
+// tree.remove(20)
 
 // console.log(traverse(tree.root))
 

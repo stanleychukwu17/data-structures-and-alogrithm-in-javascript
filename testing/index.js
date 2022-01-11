@@ -125,13 +125,15 @@ class BinarySearchTree {
         }
 
     
-        // updates the right and left children of the last child
-        lastChild.right = currentNode.right
-        lastChild.left = currentNode.left
+        // updates the right and left children of the lastChild, remember that the lastChild is node that is replacing the the currentNode that we are deleting
+        lastChild.right = currentNode.right // inheriting all the children on the right
+        lastChild.left = currentNode.left // inheriting all the children on the left
+
+        // since we're technically deleting(i.e moving) the lastChild, we have to update it's parent(i.e the nodeBeforeLastChild), we replace the lastChild with null
         if (nodeBeforeLastChild) {
-            if (nodeBeforeLastChild.right.value == value) {
+            if (nodeBeforeLastChild.right.value == value) { // means the lastChild is on the right
                 nodeBeforeLastChild.right = null
-            } else if (nodeBeforeLastChild.left.value == value) {
+            } else if (nodeBeforeLastChild.left.value == value) { // means the lastChild is on the left
                 nodeBeforeLastChild.left = null
             }
         }

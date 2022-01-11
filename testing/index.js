@@ -131,9 +131,9 @@ class BinarySearchTree {
 
         // since we're technically deleting(i.e moving) the lastChild, we have to update it's parent(i.e the nodeBeforeLastChild), we replace the lastChild with null
         if (nodeBeforeLastChild) {
-            if (nodeBeforeLastChild.right.value == value) { // means the lastChild is on the right
+            if (nodeBeforeLastChild.right.value == lastChild.value) { // means the lastChild is on the right
                 nodeBeforeLastChild.right = null
-            } else if (nodeBeforeLastChild.left.value == value) { // means the lastChild is on the left
+            } else if (nodeBeforeLastChild.left.value == lastChild.value) { // means the lastChild is on the left
                 nodeBeforeLastChild.left = null
             }
         } else {
@@ -187,7 +187,7 @@ tree.insert(165)
 // console.log(tree)
 
 // tree.remove(1)
-tree.remove(6)
+tree.remove(60)
 // console.log(traverse(tree.root))
 
 // console.log(tree.lookup(170))

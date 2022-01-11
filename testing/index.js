@@ -1,3 +1,4 @@
+// this code has been tested thorougly, and works perfectly
 class Node {
     constructor (value) {
         this.value = value;
@@ -104,7 +105,10 @@ class BinarySearchTree {
         let lastChild // we will use this variable to get the node that we will use to replace the currentNode we want to delete
         let nodeBeforeLastChild // the node before the last child
         let continueTraverse = true
-        if (!found) { return 'Invalid node value received' }
+        if (!found) {
+            console.log('node not found')
+            return 'Invalid node value received'
+        }
 
 
         // the lastChild will be used to traverse all the nodes to get the last leaf node that is greater than the currentNode we're going to delete
@@ -138,7 +142,13 @@ class BinarySearchTree {
             }
         } else {
             // since there was no node before lastChild, means it's probably a leaf at the right we're deleing - try deleting 90 from the tree, you'll see what i mean
-            lastChild = null
+            if (lastChild.value == currentNode.value) {
+                // it's a straight delete going down to the bottom of the tree, straight to a leaf node
+                lastChild = null
+            } else {
+                lastChild.right = null
+            }
+            
         }
 
         // now we delete the currentNode that we are suppose to delete(i.e the value recieved), and we do this by skipping the object in the JS memory
@@ -187,7 +197,8 @@ tree.insert(165)
 // console.log(tree)
 
 // tree.remove(1)
-tree.remove(60)
+tree.remove(190)
+
 // console.log(traverse(tree.root))
 
 // console.log(tree.lookup(170))

@@ -146,14 +146,16 @@ class BinarySearchTree {
         // console.log('prevous mode')
         // console.log(prevNode)
 
-        // now we delete the main node we're suppose to delete(i.e the value recieved), and we do this by skipping the object in the JS memory
+        // now we delete the currentNode that we are suppose to delete(i.e the value recieved), and we do this by skipping the object in the JS memory
         if (prevNode) {
+            // we have to replace the currentNode depending on what side of the tree(either it's on the right or left side of the tree)
             if (prevNode.right.value == value) {
                 prevNode.right = lastChild
             } else if (prevNode.left.value == value) {
                 prevNode.left = lastChild
             }
         } else {
+            // since there is no previous node, it means we deleted the root element
             this.root = lastChild
         }
 

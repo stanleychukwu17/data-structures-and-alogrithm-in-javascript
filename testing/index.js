@@ -136,15 +136,10 @@ class BinarySearchTree {
             } else if (nodeBeforeLastChild.left.value == value) { // means the lastChild is on the left
                 nodeBeforeLastChild.left = null
             }
+        } else {
+            // since there was no node before lastChild, means it's probably a leaf at the right we're deleing - try deleting 90 from the tree, you'll see what i mean
+            lastChild = null
         }
-
-
-        // console.log(lastChild)
-        // console.log('next')
-        // console.log(nodeBeforeLastChild)
-
-        // console.log('prevous mode')
-        // console.log(prevNode)
 
         // now we delete the currentNode that we are suppose to delete(i.e the value recieved), and we do this by skipping the object in the JS memory
         if (prevNode) {
@@ -159,6 +154,7 @@ class BinarySearchTree {
             this.root = lastChild
         }
 
+        console.log('done')
         console.log(this.root)
     }
 }
@@ -190,7 +186,8 @@ tree.insert(140)
 tree.insert(165)
 // console.log(tree)
 
-tree.remove(20)
+// tree.remove(1)
+tree.remove(6)
 // console.log(traverse(tree.root))
 
 // console.log(tree.lookup(170))

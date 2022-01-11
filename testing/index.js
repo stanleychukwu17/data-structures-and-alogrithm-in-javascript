@@ -1,9 +1,11 @@
+// this is an adjacentList graph
 class Graph {
     constructor() {
         this.numberOfNodes = 0;
         this.adjacentList = {}
     }
 
+    // adds a new node to the graph
     addVertex(node) {
 
     }

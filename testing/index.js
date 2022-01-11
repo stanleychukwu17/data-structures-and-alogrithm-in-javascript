@@ -159,10 +159,8 @@ class BinarySearchTree {
             this.root = lastChild
         }
 
-        console.log('done')
         console.log(this.root)
     }
-
 }
 
 

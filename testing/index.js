@@ -8,5 +8,13 @@ class Graph {
 
     }
 
-    
+    // this is an undirected graph
+    addEdge(node1, node2) {
+
+    }
+
+    // displays all of the nodes and it's connections
+    showConnections () {
+
+    }
 }

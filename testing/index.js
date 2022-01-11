@@ -110,11 +110,9 @@ class BinarySearchTree {
             return 'Invalid node value received'
         }
 
-
         // the lastChild will be used to traverse all the nodes to get the last leaf node that is greater than the currentNode we're going to delete
         lastChild = currentNode
         if (currentNode.right !== null) {
-            // there should be an error here, try to delete 170
             lastChild = currentNode.right
         }
 

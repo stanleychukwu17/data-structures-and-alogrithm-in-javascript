@@ -7,7 +7,7 @@ class Graph {
 
     // adds a new node to the graph
     addVertex(node) {
-
+        console.log(node)
     }
 
     // this is an undirected graph

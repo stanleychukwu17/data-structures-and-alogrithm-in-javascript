@@ -1,4 +1,4 @@
-findFactorialRecursive(item) {
+function findFactorialRecursive (item) {
     console.log('we doing this recursively')
 }
 

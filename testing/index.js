@@ -5,7 +5,6 @@ function fibonacciRecursive (n) {
 
     for (let i = 0; i <= n; i++) {
         total = next + previous
-        // console.log({previous, next, total})
 
         if (i < n) {
             previous = next
@@ -14,6 +13,10 @@ function fibonacciRecursive (n) {
     }
 
     console.log(previous)
+}
+
+function fibonacciIterative (n) {
+
 }
 
 fibonacciRecursive(12)

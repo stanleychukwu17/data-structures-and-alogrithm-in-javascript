@@ -1,4 +1,13 @@
 function fibonacciRecursive (n) {
+ 
+}
+
+/**
+ * My iterative approach below is not the best
+ * 
+ *
+*/
+function fibonacciIterative (n) {
     let total = 0
     let previous = 0
     let next = 1
@@ -12,11 +21,7 @@ function fibonacciRecursive (n) {
         }
     }
 
-    console.log(previous)
-}
-
-function fibonacciIterative (n) {
-
+    return previous
 }
 
 fibonacciRecursive(12)

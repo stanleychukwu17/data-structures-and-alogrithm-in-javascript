@@ -1,11 +1,10 @@
-// 0 1 1 2 3 5 8 13 21 34 55 89 144 233 ...
-function fibonacciIterative (n) {
-    if (n < 2) {
-        return n
+function reverseStringRecursive (str) {
+    if (str === "") {
+      return "";
+    } else {
+      return reverseStringRecursive(str.substr(1)) + str.charAt(0);
     }
-
-    return 'no be 2'
 }
-
-const answer = fibonacciIterative(8)
-console.log(answer)
+  
+let james = reverseStringRecursive('yoyo master');
+console.log(james);

@@ -1,5 +1,11 @@
+/**
+ * Once again, My recursive approach below is not the best and like i said in the note, this is the fault of the teacher, the way he explained the problem was the cause
+ *
+*/
 function fibonacciRecursive (n) {
- 
+    // i was going use an object as the variable n.. and pass all the informations i needed through the object
+    // the second option was to track the number of times i had recursed through the function using a global variable
+    // but all of my solutions above are very poor in comparison with the other solution (i.e the teacher's solution in this case)
 }
 
 /**

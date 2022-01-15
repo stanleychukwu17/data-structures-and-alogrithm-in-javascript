@@ -20,7 +20,7 @@ function selectionSort (array) {
             array[finalPostion] = smallest
         }
 
-        console.log(smallest, finalSmallest, finalPostion, array, 'bom \n')
+        console.log(smallest, finalSmallest, finalPostion, array.join(','), 'bom \n')
 
     }
 }

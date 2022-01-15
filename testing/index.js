@@ -52,4 +52,5 @@ function inserstionSort (array) {
 
 }
 
+// call the function
 inserstionSort(numbers)

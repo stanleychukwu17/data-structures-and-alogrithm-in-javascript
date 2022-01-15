@@ -33,9 +33,10 @@ function bubbleSort(arr) {
 
         // we finished looping the array, we either reset the pointers or end the loop
         if (bPointer > arrayLength) {
-            if (oneMove == 'no') {
+            if (oneMove == 'no') { // sorting has been completed
                 continueLoop = false
             } else {
+                // else we reset the pointers and continue looping
                 // console.log('--final', newArray.join(','))
 
                 orgArray = newArray
@@ -46,7 +47,6 @@ function bubbleSort(arr) {
             }
         }
     }
-
 
     let t1 = performance.now()
     console.log(newArray, t1 - t0)

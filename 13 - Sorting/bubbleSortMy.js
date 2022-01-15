@@ -6,16 +6,16 @@ function bubbleSort(arr) {
     let arrayLength = orgArray.length
     let newArray = []
     let continueLoop = true
-    let aPointer = 0
-    let bPointer = 1
+    let aPointer = 0 // will be used to track the first item in the array
+    let bPointer = 1 // will be used to track the second item in the array
     let aNum, bNum, moveItem
-    let oneMove = 'no'
-    let t0 = performance.now()
+    let oneMove = 'no' // if yes it means at-least one swapping of positions occured, if no - it means that the sorting is complete
+    let t0 = performance.now() // helps me track the time it takes my code to execute
 
     while (continueLoop) {
         aNum = orgArray[aPointer]
         bNum = orgArray[bPointer]
-        moveItem = 'no' // if yes it means we should swap positions
+        moveItem = 'no' // if yes it means we should swap positions of the first and second items
 
         if (aNum > bNum) {
             oneMove = 'yes'
@@ -31,6 +31,7 @@ function bubbleSort(arr) {
             bPointer++
         }
 
+        // we finished looping the array, we either reset the pointers or end the loop
         if (bPointer > arrayLength) {
             if (oneMove == 'no') {
                 continueLoop = false

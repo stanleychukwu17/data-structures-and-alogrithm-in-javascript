@@ -13,7 +13,7 @@ function inserstionSort (array) {
         } else {
             // find where number should go
             for (let j = 1; j < i; j++) {
-                if (currentNumber > array[j-1] && currentNumber < array[j]) {
+                if (currentNumber > array[j-1] && currentNumber <= array[j]) {
                     // move the number to the right spot
                     array.splice(j, 0, array.splice(i, 1)[0])
                 }

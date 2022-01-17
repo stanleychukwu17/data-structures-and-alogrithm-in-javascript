@@ -48,7 +48,8 @@ function bubbleSort(arr) {
 
 
     let t1 = performance.now()
-    console.log(newArray, t1 - t0)
+    console.log(t1 - t0)
+    console.log(newArray)
 }
 
 function bubbleSort2(array) {

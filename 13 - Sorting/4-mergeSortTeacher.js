@@ -1,7 +1,3 @@
-// const numbers = [99, 44, 6, 2, 1, 5, 63, 44, 87, 283, 4, 0, 17]
-const numbers = [99, 44, 6, 2, 1, 5, 63, 44, 87, 283, 4, 0]
-for (let i = 0; i < 1100; i++) { numbers.push(99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0) }
-let t0 = performance.now()
 
 function mergeSort (array) {
     if (array.length === 1) return array
@@ -36,10 +32,3 @@ function merge (left, right) {
     // console.log(left, right)
     return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
 }
-
-const jim = mergeSort(numbers)
-// console.log('main', numbers.join(', '))
-// console.log('small', jim.join(', '))
-
-let t1 = performance.now()
-console.log(t1 - t0)

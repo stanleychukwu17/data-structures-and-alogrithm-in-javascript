@@ -10,6 +10,7 @@ class Node {
     constructor(){
       this.root = null;
     }
+
     insert(value){
       const newNode = new Node(value);
       if (this.root === null) {
@@ -35,6 +36,7 @@ class Node {
         }
       }
     }
+
     lookup(value){
       if (!this.root) {
         return false;
@@ -51,6 +53,7 @@ class Node {
       }
       return null
     }
+
     remove(value) {
       if (!this.root) {
         return false;
@@ -129,6 +132,10 @@ class Node {
         return true;
         }
       }
+    }
+
+    breadthFirstSearch () {
+
     }
   }
   

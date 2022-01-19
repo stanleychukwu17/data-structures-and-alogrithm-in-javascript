@@ -1,0 +1,10 @@
+1. {
+    https://leetcode.com/problems/validate-binary-search-tree/
+    from lecture #14. Algorithms Searching + BFS + DFS
+    task num 15. Optional Exercise Validate A BST
+}
+2. {
+    file:///D:/Sz%20-%20programming%20videos/0.%20programing%20videos/data%20structures%20and%20alogrithm/Master%20the%20Coding%20Interview%20Data%20Structures%20+%20Algorithms/15.%20Algorithms%20Dynamic%20Programming/7.%20Interview%20Questions%20Dynamic%20Programming.html
+    from lecture #15. Algorithms Dynamic Programming
+    task num 7. Interview Questions Dynamic Programming
+}
